@@ -1,0 +1,243 @@
+.garage-detail-container {
+  min-height: 100vh;
+  padding: 20px;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.back-button {
+  background: white;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 50px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  margin-bottom: 20px;
+  color: #667eea;
+}
+
+.back-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 30px rgba(0, 0, 0, 0.15);
+}
+
+.detail-content {
+  background: white;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+}
+
+.detail-header {
+  position: relative;
+  height: 400px;
+}
+
+.detail-main-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.header-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
+  padding: 40px 30px 30px;
+  color: white;
+}
+
+.header-overlay h1 {
+  font-size: 2.5rem;
+  margin-bottom: 12px;
+}
+
+.header-meta {
+  display: flex;
+  gap: 20px;
+  font-size: 1.1rem;
+}
+
+.distance-large,
+.rating-large {
+  background: rgba(255, 255, 255, 0.2);
+  padding: 8px 16px;
+  border-radius: 20px;
+  backdrop-filter: blur(10px);
+}
+
+.detail-body {
+  padding: 40px 30px;
+}
+
+.info-section {
+  margin-bottom: 40px;
+}
+
+.info-section h2 {
+  font-size: 1.5rem;
+  color: #2d3748;
+  margin-bottom: 16px;
+  padding-bottom: 12px;
+  border-bottom: 2px solid #667eea;
+}
+
+.info-section p {
+  color: #4a5568;
+  line-height: 1.8;
+  font-size: 1.05rem;
+}
+
+.specialty-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.specialty-tag {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  padding: 10px 20px;
+  border-radius: 20px;
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+.services-list {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 12px;
+}
+
+.services-list li {
+  color: #4a5568;
+  font-size: 1.05rem;
+  padding: 12px;
+  background: #f7fafc;
+  border-radius: 8px;
+  border-left: 3px solid #667eea;
+}
+
+.landmarks {
+  display: grid;
+  gap: 12px;
+}
+
+.landmark-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px;
+  background: #f7fafc;
+  border-radius: 8px;
+  color: #4a5568;
+  font-size: 1.05rem;
+}
+
+.landmark-icon {
+  font-size: 1.3rem;
+}
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 16px;
+}
+
+.gallery-image {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 12px;
+  transition: transform 0.3s ease;
+  cursor: pointer;
+}
+
+.gallery-image:hover {
+  transform: scale(1.05);
+}
+
+.contact-section p {
+  margin-bottom: 12px;
+  font-size: 1.05rem;
+}
+
+.contact-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  margin-bottom: 16px;
+  padding: 12px;
+  background: #f7fafc;
+  border-radius: 8px;
+}
+
+.contact-icon {
+  font-size: 1.3rem;
+  min-width: 24px;
+}
+
+.contact-item div {
+  flex: 1;
+}
+
+.contact-item strong {
+  display: block;
+  color: #2d3748;
+  margin-bottom: 4px;
+  font-size: 0.9rem;
+}
+
+.contact-item div:not(:has(strong)) {
+  color: #4a5568;
+  font-size: 1.05rem;
+}
+
+.directions-button {
+  width: 100%;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border: none;
+  padding: 18px;
+  border-radius: 50px;
+  font-size: 1.2rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 20px rgba(102, 126, 234, 0.4);
+  margin-top: 20px;
+}
+
+.directions-button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 30px rgba(102, 126, 234, 0.5);
+}
+
+@media (max-width: 768px) {
+  .detail-header {
+    height: 300px;
+  }
+  
+  .header-overlay h1 {
+    font-size: 1.8rem;
+  }
+  
+  .header-meta {
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .detail-body {
+    padding: 30px 20px;
+  }
+  
+  .services-list {
+    grid-template-columns: 1fr;
+  }
+}
