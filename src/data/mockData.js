@@ -51,7 +51,7 @@ export const mockGarages = [
     rating: 4.8,
     reviews: 234,
     specialties: ["Oil Change", "Brake Service", "Diagnostics"],
-    priceRange: "KSh 2,000 - 5,000",
+    pricing: { min: 2000, max: 5000 },
     image:
       "https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?w=800&h=600&fit=crop",
     lat: -1.2864,
@@ -92,7 +92,7 @@ export const mockGarages = [
     rating: 4.6,
     reviews: 189,
     specialties: ["Quick Service", "Tire Change", "Battery"],
-    priceRange: "KSh 1,500 - 4,000",
+    pricing: { min: 1500, max: 4000 },
     image:
       "https://images.unsplash.com/photo-1619642751034-765dfdf7c58e?w=800&h=600&fit=crop",
     lat: -1.2921,
@@ -132,7 +132,7 @@ export const mockGarages = [
     rating: 4.7,
     reviews: 567,
     specialties: ["Full Service", "Diagnostics", "NYC Inspection"],
-    priceRange: "$80 - $200",
+    pricing: { min: 80, max: 200 },
     image:
       "https://images.unsplash.com/photo-1487754180451-c456f719a1fc?w=800&h=600&fit=crop",
     lat: 40.7580,
@@ -172,7 +172,7 @@ export const mockGarages = [
     rating: 4.5,
     reviews: 423,
     specialties: ["Quick Service", "Brakes", "Tires"],
-    priceRange: "$60 - $150",
+    pricing: { min: 60, max: 150 },
     image:
       "https://images.unsplash.com/photo-1625047508077-0b8e5136b4e1?w=800&h=600&fit=crop",
     lat: 40.6782,
@@ -212,7 +212,7 @@ export const mockGarages = [
     rating: 4.8,
     reviews: 312,
     specialties: ["MOT Testing", "Servicing", "Repairs"],
-    priceRange: "£50 - £180",
+    pricing: { min: 50, max: 180 },
     image:
       "https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?w=800&h=600&fit=crop",
     lat: 51.5074,
@@ -253,7 +253,7 @@ export const mockGarages = [
     rating: 4.6,
     reviews: 445,
     specialties: ["All Brands", "Quick Service", "Affordable"],
-    priceRange: "₹1,500 - ₹8,000",
+    pricing: { min: 1500, max: 8000 },
     image:
       "https://images.unsplash.com/photo-1619642751034-765dfdf7c58e?w=800&h=600&fit=crop",
     lat: 19.0760,
@@ -294,7 +294,7 @@ export const mockGarages = [
     rating: 4.9,
     reviews: 289,
     specialties: ["European Cars", "Diagnostics", "Performance"],
-    priceRange: "A$100 - A$300",
+    pricing: { min: 100, max: 300 },
     image:
       "https://images.unsplash.com/photo-1625047508077-0b8e5136b4e1?w=800&h=600&fit=crop",
     lat: -33.8688,
@@ -335,7 +335,7 @@ export const mockGarages = [
     rating: 4.7,
     reviews: 198,
     specialties: ["All Makes", "Service", "Repairs"],
-    priceRange: "R500 - R3,000",
+    pricing: { min: 500, max: 3000 },
     image:
       "https://images.unsplash.com/photo-1487754180451-c456f719a1fc?w=800&h=600&fit=crop",
     lat: -26.2041,
@@ -375,7 +375,7 @@ export const mockGarages = [
     rating: 4.9,
     reviews: 412,
     specialties: ["Luxury Cars", "Performance", "Detailing"],
-    priceRange: "KSh 5,000 - 15,000",
+    pricing: { min: 5000, max: 15000 },
     image:
       "https://images.unsplash.com/photo-1625047508077-0b8e5136b4e1?w=800&h=600&fit=crop",
     lat: -1.3197,
@@ -415,7 +415,7 @@ export const mockGarages = [
     rating: 4.7,
     reviews: 156,
     specialties: ["Eco-Friendly", "Hybrid", "Electric"],
-    priceRange: "KSh 3,000 - 8,000",
+    pricing: { min: 3000, max: 8000 },
     image:
       "https://images.unsplash.com/photo-1487754180451-c456f719a1fc?w=800&h=600&fit=crop",
     lat: -1.2333,
@@ -454,7 +454,7 @@ export const mockGarages = [
     rating: 4.5,
     reviews: 298,
     specialties: ["Emergency", "Towing", "24/7 Service"],
-    priceRange: "KSh 2,500 - 6,000",
+    pricing: { min: 2500, max: 6000 },
     image:
       "https://images.unsplash.com/photo-1625047508077-0b8e5136b4e1?w=800&h=600&fit=crop",
     lat: -1.2864,
@@ -494,7 +494,7 @@ export const mockGarages = [
     rating: 4.9,
     reviews: 87,
     specialties: ["Classic Cars", "Restoration", "Custom Work"],
-    priceRange: "KSh 10,000 - 50,000",
+    pricing: { min: 10000, max: 50000 },
     image:
       "https://images.unsplash.com/photo-1619642751034-765dfdf7c58e?w=800&h=600&fit=crop",
     lat: -1.3167,

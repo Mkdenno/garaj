@@ -31,11 +31,12 @@
 
 .search-bar {
   margin-bottom: 30px;
+  position: relative;
 }
 
 .search-input {
   width: 100%;
-  padding: 16px 20px;
+  padding: 16px 50px 16px 20px;
   font-size: 1rem;
   border: none;
   border-radius: 50px;
@@ -47,6 +48,30 @@
 .search-input:focus {
   box-shadow: 0 6px 30px rgba(0, 0, 0, 0.15);
   transform: translateY(-2px);
+}
+
+.clear-search {
+  position: absolute;
+  right: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: #e2e8f0;
+  border: none;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 1rem;
+  color: #4a5568;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.clear-search:hover {
+  background: #cbd5e0;
+  transform: translateY(-50%) scale(1.1);
 }
 
 .garages-grid {

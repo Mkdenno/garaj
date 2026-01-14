@@ -1,48 +1,83 @@
 import { useState, useEffect } from "react";
 import "./GarageList.css";
 import { mockGarages, calculateDistance, getLocalTime } from "../data/mockData";
+import { formatPrice } from "../data/currencyData";
 
 function GarageList({ onSelectGarage }) {
   const [garages, setGarages] = useState([]);
+  const [allGarages, setAllGarages] = useState([]);
   const [userLocation, setUserLocation] = useState(null);
+  const [userCountry, setUserCountry] = useState(null);
   const [loading, setLoading] = useState(true);
   const [searchRadius] = useState(50); // Default 50km radius
+  const [searchQuery, setSearchQuery] = useState("");
 
   useEffect(() => {
     // Get user's actual location
     if (navigator.geolocation) {
       navigator.geolocation.getCurrentPosition(
-        (position) => {
+        async (position) => {
           const userLoc = {
             lat: position.coords.latitude,
             lng: position.coords.longitude,
           };
           setUserLocation(userLoc);
-          filterAndSortGarages(userLoc);
+          
+          // Get country from coordinates using reverse geocoding
+          const country = await getCountryFromCoordinates(userLoc.lat, userLoc.lng);
+          setUserCountry(country);
+          
+          filterAndSortGarages(userLoc, country);
         },
         (error) => {
           console.log("Location access denied, showing all garages");
           // If location denied, show all garages sorted by a default location
           const defaultLoc = { lat: 0, lng: 0 };
           setUserLocation(defaultLoc);
-          filterAndSortGarages(defaultLoc, true);
+          setUserCountry(null);
+          filterAndSortGarages(defaultLoc, null, true);
         }
       );
     } else {
       // Browser doesn't support geolocation, show all garages
       const defaultLoc = { lat: 0, lng: 0 };
       setUserLocation(defaultLoc);
-      filterAndSortGarages(defaultLoc, true);
+      setUserCountry(null);
+      filterAndSortGarages(defaultLoc, null, true);
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  const filterAndSortGarages = (userLoc, showAll = false) => {
+  const getCountryFromCoordinates = async (lat, lng) => {
+    try {
+      // Use OpenStreetMap Nominatim API for reverse geocoding (free)
+      const response = await fetch(
+        `https://nominatim.openstreetmap.org/reverse?format=json&lat=${lat}&lon=${lng}&zoom=3`
+      );
+      const data = await response.json();
+      
+      if (data && data.address && data.address.country) {
+        return data.address.country;
+      }
+    } catch (error) {
+      console.log("Could not determine country from coordinates");
+    }
+    return null;
+  };
+
+  const filterAndSortGarages = (userLoc, country = null, showAll = false) => {
     // Calculate distances for all garages
-    const garagesWithDistance = mockGarages.map((garage) => ({
+    let garagesWithDistance = mockGarages.map((garage) => ({
       ...garage,
       distance: calculateDistance(userLoc.lat, userLoc.lng, garage.lat, garage.lng),
     }));
+
+    // Filter by country if available
+    if (country && !showAll) {
+      garagesWithDistance = garagesWithDistance.filter(
+        (garage) => garage.country === country
+      );
+    }
 
     // Filter by radius (only if location is available)
     const filteredGarages = showAll
@@ -52,8 +87,32 @@ function GarageList({ onSelectGarage }) {
     // Sort by distance
     const sortedGarages = filteredGarages.sort((a, b) => a.distance - b.distance);
 
+    setAllGarages(sortedGarages);
     setGarages(sortedGarages);
     setLoading(false);
+  };
+
+  const handleSearch = (query) => {
+    setSearchQuery(query);
+    
+    if (!query.trim()) {
+      setGarages(allGarages);
+      return;
+    }
+
+    const searchLower = query.toLowerCase();
+    const filtered = allGarages.filter((garage) => {
+      return (
+        garage.name.toLowerCase().includes(searchLower) ||
+        garage.city.toLowerCase().includes(searchLower) ||
+        garage.country.toLowerCase().includes(searchLower) ||
+        garage.specialties.some((s) => s.toLowerCase().includes(searchLower)) ||
+        garage.services.some((s) => s.toLowerCase().includes(searchLower)) ||
+        garage.description.toLowerCase().includes(searchLower)
+      );
+    });
+
+    setGarages(filtered);
   };
 
   if (loading) {
@@ -91,10 +150,12 @@ function GarageList({ onSelectGarage }) {
         <h1>🚗 Find Your Garage</h1>
         <p>
           {garages.length} garage{garages.length !== 1 ? "s" : ""} found near you
+          {userCountry && ` in ${userCountry}`}
         </p>
         {userLocation && userLocation.lat !== 0 && (
           <p className="location-note">
             📍 Showing garages within {searchRadius} km
+            {userCountry && ` • Filtered by ${userCountry}`}
           </p>
         )}
       </header>
@@ -102,9 +163,19 @@ function GarageList({ onSelectGarage }) {
       <div className="search-bar">
         <input
           type="text"
-          placeholder="Search for services or location..."
+          placeholder="Search by name, service, or location..."
           className="search-input"
+          value={searchQuery}
+          onChange={(e) => handleSearch(e.target.value)}
         />
+        {searchQuery && (
+          <button 
+            className="clear-search"
+            onClick={() => handleSearch("")}
+          >
+            ✕
+          </button>
+        )}
       </div>
 
       <div className="garages-grid">
@@ -146,7 +217,12 @@ function GarageList({ onSelectGarage }) {
               </div>
               <div className="garage-footer">
                 <span className="status open">Open Now</span>
-                <span className="price">{garage.priceRange}</span>
+                <span className="price">
+                  {garage.pricing 
+                    ? formatPrice(garage.pricing.min, garage.pricing.max, garage.country)
+                    : "Price on request"
+                  }
+                </span>
               </div>
             </div>
           </div>
