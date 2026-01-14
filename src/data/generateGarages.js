@@ -32,6 +32,8 @@ const countries = {
   Kenya: {
     cities: ["Nairobi", "Mombasa", "Kisumu", "Nakuru", "Eldoret"],
     timezone: "Africa/Nairobi",
+    phonePrefix: "+254",
+    phoneFormat: (i) => `+254 ${700 + (i % 100)} ${Math.floor(100000 + Math.random() * 900000)}`,
     coords: [
       { lat: -1.2864, lng: 36.8172 }, // Nairobi
       { lat: -4.0435, lng: 39.6682 }, // Mombasa
@@ -44,6 +46,12 @@ const countries = {
   USA: {
     cities: ["New York", "Los Angeles", "Chicago", "Houston", "Phoenix", "Philadelphia", "San Antonio", "San Diego", "Dallas", "San Jose"],
     timezone: "America/New_York",
+    phonePrefix: "+1",
+    phoneFormat: (i) => {
+      const areaCodes = [212, 310, 312, 713, 602, 215, 210, 619, 214, 408];
+      const areaCode = areaCodes[i % areaCodes.length];
+      return `+1 (${areaCode}) ${Math.floor(200 + Math.random() * 800)}-${Math.floor(1000 + Math.random() * 9000)}`;
+    },
     coords: [
       { lat: 40.7128, lng: -74.0060 }, // New York
       { lat: 34.0522, lng: -118.2437 }, // Los Angeles
@@ -61,6 +69,12 @@ const countries = {
   UK: {
     cities: ["London", "Manchester", "Birmingham", "Leeds", "Glasgow", "Liverpool", "Newcastle", "Sheffield", "Bristol", "Edinburgh"],
     timezone: "Europe/London",
+    phonePrefix: "+44",
+    phoneFormat: (i) => {
+      const areaCodes = [20, 161, 121, 113, 141, 151, 191, 114, 117, 131];
+      const areaCode = areaCodes[i % areaCodes.length];
+      return `+44 ${areaCode} ${Math.floor(1000 + Math.random() * 9000)} ${Math.floor(1000 + Math.random() * 9000)}`;
+    },
     coords: [
       { lat: 51.5074, lng: -0.1278 }, // London
       { lat: 53.4808, lng: -2.2426 }, // Manchester
@@ -78,6 +92,12 @@ const countries = {
   India: {
     cities: ["Mumbai", "Delhi", "Bangalore", "Hyderabad", "Chennai", "Kolkata", "Pune", "Ahmedabad", "Jaipur", "Surat"],
     timezone: "Asia/Kolkata",
+    phonePrefix: "+91",
+    phoneFormat: (i) => {
+      const prefixes = [22, 11, 80, 40, 44, 33, 20, 79, 141, 261];
+      const prefix = prefixes[i % prefixes.length];
+      return `+91 ${prefix} ${Math.floor(2000 + Math.random() * 8000)} ${Math.floor(1000 + Math.random() * 9000)}`;
+    },
     coords: [
       { lat: 19.0760, lng: 72.8777 }, // Mumbai
       { lat: 28.7041, lng: 77.1025 }, // Delhi
@@ -95,6 +115,12 @@ const countries = {
   Australia: {
     cities: ["Sydney", "Melbourne", "Brisbane", "Perth", "Adelaide", "Gold Coast", "Canberra", "Newcastle", "Wollongong", "Hobart"],
     timezone: "Australia/Sydney",
+    phonePrefix: "+61",
+    phoneFormat: (i) => {
+      const areaCodes = [2, 3, 7, 8, 8, 7, 2, 2, 2, 3];
+      const areaCode = areaCodes[i % areaCodes.length];
+      return `+61 ${areaCode} ${Math.floor(1000 + Math.random() * 9000)} ${Math.floor(1000 + Math.random() * 9000)}`;
+    },
     coords: [
       { lat: -33.8688, lng: 151.2093 }, // Sydney
       { lat: -37.8136, lng: 144.9631 }, // Melbourne
@@ -112,6 +138,12 @@ const countries = {
   "South Africa": {
     cities: ["Johannesburg", "Cape Town", "Durban", "Pretoria", "Port Elizabeth", "Bloemfontein", "East London", "Polokwane", "Nelspruit", "Kimberley"],
     timezone: "Africa/Johannesburg",
+    phonePrefix: "+27",
+    phoneFormat: (i) => {
+      const areaCodes = [11, 21, 31, 12, 41, 51, 43, 15, 13, 53];
+      const areaCode = areaCodes[i % areaCodes.length];
+      return `+27 ${areaCode} ${Math.floor(100 + Math.random() * 900)} ${Math.floor(1000 + Math.random() * 9000)}`;
+    },
     coords: [
       { lat: -26.2041, lng: 28.0473 }, // Johannesburg
       { lat: -33.9249, lng: 18.4241 }, // Cape Town
@@ -181,7 +213,7 @@ export const generateGaragesForCountry = (country, startId, count = 50) => {
         "https://images.unsplash.com/photo-1625047509168-a7026f36de04?w=400&h=300&fit=crop",
         "https://images.unsplash.com/photo-1487754180451-c456f719a1fc?w=400&h=300&fit=crop"
       ],
-      phone: `+${Math.floor(100000000000 + Math.random() * 900000000000)}`,
+      phone: config.phoneFormat(i),
       email: `info@${garageNames[nameIndex].toLowerCase().replace(/\s+/g, '')}${city.toLowerCase().replace(/\s+/g, '')}.com`,
       hours: "Mon-Sat: 8:00 AM - 6:00 PM"
     });
