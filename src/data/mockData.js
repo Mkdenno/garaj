@@ -1,3 +1,6 @@
+// Import generated garages
+import { generateAllGarages } from './generateGarages';
+
 // Helper function to calculate distance between two coordinates
 export const calculateDistance = (lat1, lon1, lat2, lon2) => {
   const R = 6371; // Radius of the Earth in km
@@ -526,3 +529,7 @@ export const mockGarages = [
     hours: "Tue-Sat: 9:00 AM - 5:00 PM",
   },
 ];
+
+// Combine original garages with generated ones
+const generatedGarages = generateAllGarages();
+export const allMockGarages = [...mockGarages, ...generatedGarages];
