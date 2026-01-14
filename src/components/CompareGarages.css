@@ -1,0 +1,257 @@
+.compare-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.8);
+  z-index: 2000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  overflow-y: auto;
+}
+
+.compare-container {
+  background: white;
+  border-radius: 20px;
+  max-width: 1200px;
+  width: 100%;
+  max-height: 90vh;
+  overflow-y: auto;
+  animation: slideUp 0.3s ease;
+}
+
+.compare-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 24px;
+  border-bottom: 2px solid #e2e8f0;
+  position: sticky;
+  top: 0;
+  background: white;
+  z-index: 10;
+}
+
+.compare-header h2 {
+  margin: 0;
+  color: #2d3748;
+}
+
+.close-compare {
+  background: #e2e8f0;
+  border: none;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 1.2rem;
+  transition: all 0.2s ease;
+}
+
+.close-compare:hover {
+  background: #cbd5e0;
+  transform: rotate(90deg);
+}
+
+.compare-empty {
+  text-align: center;
+  padding: 60px 20px;
+  color: #718096;
+}
+
+.compare-empty p {
+  margin: 10px 0;
+  font-size: 1.1rem;
+}
+
+.compare-hint {
+  font-size: 0.9rem;
+  opacity: 0.7;
+}
+
+.compare-table {
+  padding: 24px;
+}
+
+.compare-row {
+  display: grid;
+  grid-template-columns: 200px repeat(auto-fit, minmax(250px, 1fr));
+  gap: 16px;
+  padding: 16px 0;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.compare-row-header {
+  border-bottom: 2px solid #667eea;
+}
+
+.compare-cell {
+  padding: 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.compare-cell img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 12px;
+  margin-bottom: 12px;
+}
+
+.compare-cell h3 {
+  margin: 0 0 8px 0;
+  font-size: 1.1rem;
+  color: #2d3748;
+}
+
+.compare-label {
+  font-weight: 700;
+  color: #667eea;
+  align-items: flex-start;
+  justify-content: center;
+  text-align: left;
+}
+
+.remove-from-compare {
+  background: #fc8181;
+  color: white;
+  border: none;
+  padding: 6px 16px;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 0.85rem;
+  transition: all 0.2s ease;
+}
+
+.remove-from-compare:hover {
+  background: #f56565;
+  transform: scale(1.05);
+}
+
+.garage-selector {
+  padding: 24px;
+  background: #f7fafc;
+  border-top: 2px solid #e2e8f0;
+}
+
+.garage-selector h3 {
+  margin: 0 0 16px 0;
+  color: #2d3748;
+}
+
+.garage-selector-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 16px;
+  max-height: 400px;
+  overflow-y: auto;
+}
+
+.selector-card {
+  position: relative;
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border: 3px solid transparent;
+}
+
+.selector-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.selector-card.selected {
+  border-color: #667eea;
+  box-shadow: 0 8px 20px rgba(102, 126, 234, 0.3);
+}
+
+.selector-card img {
+  width: 100%;
+  height: 120px;
+  object-fit: cover;
+}
+
+.selector-info {
+  padding: 12px;
+}
+
+.selector-info h4 {
+  margin: 0 0 4px 0;
+  font-size: 0.95rem;
+  color: #2d3748;
+}
+
+.selector-info p {
+  margin: 0;
+  font-size: 0.85rem;
+  color: #718096;
+}
+
+.selected-badge {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: #667eea;
+  color: white;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Dark mode */
+body.dark-mode .compare-container {
+  background: #1a202c;
+}
+
+body.dark-mode .compare-header {
+  background: #1a202c;
+  border-bottom-color: #4a5568;
+}
+
+body.dark-mode .compare-header h2 {
+  color: #e0e0e0;
+}
+
+body.dark-mode .compare-cell h3,
+body.dark-mode .compare-label {
+  color: #e0e0e0;
+}
+
+body.dark-mode .garage-selector {
+  background: #2d3748;
+}
+
+body.dark-mode .selector-card {
+  background: #2d3748;
+}
+
+body.dark-mode .selector-info h4 {
+  color: #e0e0e0;
+}
+
+@media (max-width: 768px) {
+  .compare-row {
+    grid-template-columns: 1fr;
+  }
+  
+  .compare-label {
+    background: #f7fafc;
+    padding: 8px 12px;
+    border-radius: 8px;
+    font-weight: 600;
+  }
+}

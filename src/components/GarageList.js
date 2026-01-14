@@ -3,6 +3,8 @@ import "./GarageList.css";
 import { allMockGarages, calculateDistance, getLocalTime } from "../data/mockData";
 import { formatPrice } from "../data/currencyData";
 import AIChat from "./AIChat";
+import CompareGarages from "./CompareGarages";
+import { isFavorite, toggleFavorite } from "../utils/favorites";
 
 function GarageList({ onSelectGarage }) {
   const [garages, setGarages] = useState([]);
@@ -17,11 +19,37 @@ function GarageList({ onSelectGarage }) {
   const [radiusFilter, setRadiusFilter] = useState(20); // Default 20km
   const [radiusFilterEnabled, setRadiusFilterEnabled] = useState(false); // Off by default
   const [showRadiusFilter, setShowRadiusFilter] = useState(false);
+  const [showCompare, setShowCompare] = useState(false);
+  const [favorites, setFavorites] = useState([]);
+  const [showFavoritesOnly, setShowFavoritesOnly] = useState(false);
+
+  // Load favorites on mount
+  useEffect(() => {
+    const loadFavorites = () => {
+      const favs = JSON.parse(localStorage.getItem('favoriteGarages') || '[]');
+      setFavorites(favs);
+    };
+    loadFavorites();
+    window.addEventListener('storage', loadFavorites);
+    return () => window.removeEventListener('storage', loadFavorites);
+  }, []);
+
+  const handleToggleFavorite = (garageId, e) => {
+    e.stopPropagation();
+    toggleFavorite(garageId);
+    const favs = JSON.parse(localStorage.getItem('favoriteGarages') || '[]');
+    setFavorites(favs);
+  };
 
   // Apply filters whenever dependencies change
   useEffect(() => {
     if (allGarages.length > 0) {
       let filtered = allGarages;
+
+      // Apply favorites filter
+      if (showFavoritesOnly) {
+        filtered = filtered.filter((garage) => favorites.includes(garage.id));
+      }
 
       // Apply country filter
       if (selectedCountry !== "all") {
@@ -35,7 +63,7 @@ function GarageList({ onSelectGarage }) {
 
       setGarages(filtered);
     }
-  }, [allGarages, selectedCountry, radiusFilter, radiusFilterEnabled, userLocation]);
+  }, [allGarages, selectedCountry, radiusFilter, radiusFilterEnabled, userLocation, showFavoritesOnly, favorites]);
 
   useEffect(() => {
     // Get user's actual location
@@ -258,6 +286,21 @@ function GarageList({ onSelectGarage }) {
             {selectedCountry !== "all" && ` in ${selectedCountry}`}
           </p>
         )}
+        
+        <div className="header-actions">
+          <button 
+            className="action-button"
+            onClick={() => setShowCompare(true)}
+          >
+            ⚖️ Compare
+          </button>
+          <button 
+            className={`action-button ${showFavoritesOnly ? 'active' : ''}`}
+            onClick={() => setShowFavoritesOnly(!showFavoritesOnly)}
+          >
+            ⭐ Favorites ({favorites.length})
+          </button>
+        </div>
       </header>
 
       <div className="filters-section">
@@ -368,6 +411,13 @@ function GarageList({ onSelectGarage }) {
             onClick={() => onSelectGarage(garage)}
           >
             <div className="garage-image">
+              <button 
+                className={`favorite-btn ${isFavorite(garage.id) ? 'favorited' : ''}`}
+                onClick={(e) => handleToggleFavorite(garage.id, e)}
+                aria-label="Toggle favorite"
+              >
+                {isFavorite(garage.id) ? '❤️' : '🤍'}
+              </button>
               <img 
                 src={garage.image} 
                 alt={garage.name}
@@ -436,6 +486,14 @@ function GarageList({ onSelectGarage }) {
         onSelectGarage={onSelectGarage}
         userLocation={userLocation}
       />
+
+      {/* Compare Garages Modal */}
+      {showCompare && (
+        <CompareGarages 
+          garages={garages}
+          onClose={() => setShowCompare(false)}
+        />
+      )}
     </div>
   );
 }

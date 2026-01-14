@@ -1,0 +1,125 @@
+.dark-mode-toggle {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: none;
+  background: white;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  font-size: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  z-index: 1001;
+}
+
+.dark-mode-toggle:hover {
+  transform: scale(1.1);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* Dark Mode Styles */
+body.dark-mode {
+  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+  color: #e0e0e0;
+}
+
+body.dark-mode .garage-list-container {
+  background: transparent;
+}
+
+body.dark-mode .header {
+  color: #e0e0e0;
+}
+
+body.dark-mode .garage-card {
+  background: #2d3748;
+  color: #e0e0e0;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+}
+
+body.dark-mode .garage-card:hover {
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.6);
+}
+
+body.dark-mode .garage-info h3 {
+  color: #e0e0e0;
+}
+
+body.dark-mode .search-input {
+  background: #2d3748;
+  color: #e0e0e0;
+  border: 2px solid #4a5568;
+}
+
+body.dark-mode .search-input::placeholder {
+  color: #a0aec0;
+}
+
+body.dark-mode .country-selector,
+body.dark-mode .radius-filter {
+  background: #2d3748;
+  color: #e0e0e0;
+}
+
+body.dark-mode .country-dropdown {
+  background: #1a202c;
+  color: #e0e0e0;
+  border-color: #4a5568;
+}
+
+body.dark-mode .suggestions-dropdown {
+  background: #2d3748;
+  color: #e0e0e0;
+}
+
+body.dark-mode .suggestion-item:hover {
+  background: #4a5568;
+}
+
+body.dark-mode .garage-detail-container {
+  background: #1a202c;
+  color: #e0e0e0;
+}
+
+body.dark-mode .detail-content {
+  background: #2d3748;
+}
+
+body.dark-mode .info-section {
+  background: #1a202c;
+}
+
+body.dark-mode .back-button {
+  background: #4a5568;
+  color: #e0e0e0;
+}
+
+body.dark-mode .ai-chat-window {
+  background: #2d3748;
+  color: #e0e0e0;
+}
+
+body.dark-mode .ai-chat-messages {
+  background: #1a202c;
+}
+
+body.dark-mode .message-content {
+  background: #4a5568;
+  color: #e0e0e0;
+}
+
+body.dark-mode .ai-chat-input input {
+  background: #1a202c;
+  color: #e0e0e0;
+  border-color: #4a5568;
+}
+
+body.dark-mode .dark-mode-toggle {
+  background: #2d3748;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+}

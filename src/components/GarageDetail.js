@@ -1,5 +1,8 @@
 import "./GarageDetail.css";
 import { getLocalTime } from "../data/mockData";
+import ShareButton from "./ShareButton";
+import QRCodeGenerator from "./QRCodeGenerator";
+import PrintButton from "./PrintButton";
 
 function GarageDetail({ garage, onBack }) {
   const handleGetDirections = () => {
@@ -12,6 +15,12 @@ function GarageDetail({ garage, onBack }) {
       <button className="back-button" onClick={onBack}>
         ← Back
       </button>
+
+      <div className="detail-actions">
+        <ShareButton garage={garage} />
+        <QRCodeGenerator garage={garage} />
+        <PrintButton garage={garage} />
+      </div>
 
       <div className="detail-content">
         <div className="detail-header">

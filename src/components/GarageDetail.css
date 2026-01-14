@@ -241,3 +241,13 @@
     grid-template-columns: 1fr;
   }
 }
+
+
+/* Detail Actions */
+.detail-actions {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  padding: 20px;
+  flex-wrap: wrap;
+}
