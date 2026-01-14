@@ -15,7 +15,27 @@ function GarageDetail({ garage, onBack }) {
 
       <div className="detail-content">
         <div className="detail-header">
-          <img src={garage.image} alt={garage.name} className="detail-main-image" />
+          <img 
+            src={garage.image} 
+            alt={garage.name} 
+            className="detail-main-image"
+            onError={(e) => {
+              // Fallback to gallery images if main image fails
+              if (garage.gallery && garage.gallery.length > 0) {
+                e.target.src = garage.gallery[0];
+                e.target.onerror = () => {
+                  if (garage.gallery[1]) {
+                    e.target.src = garage.gallery[1];
+                    e.target.onerror = () => {
+                      if (garage.gallery[2]) {
+                        e.target.src = garage.gallery[2];
+                      }
+                    };
+                  }
+                };
+              }
+            }}
+          />
           <div className="header-overlay">
             <h1>{garage.name}</h1>
             <div className="header-meta">
@@ -65,7 +85,21 @@ function GarageDetail({ garage, onBack }) {
             <h2>Gallery</h2>
             <div className="gallery">
               {garage.gallery.map((image, index) => (
-                <img key={index} src={image} alt={`Gallery ${index + 1}`} className="gallery-image" />
+                <img 
+                  key={index} 
+                  src={image} 
+                  alt={`${garage.name} - Gallery ${index + 1}`} 
+                  className="gallery-image"
+                  onError={(e) => {
+                    // If gallery image fails, try using main image or other gallery images
+                    if (e.target.src !== garage.image) {
+                      e.target.src = garage.image;
+                    } else {
+                      // Hide broken image
+                      e.target.style.display = 'none';
+                    }
+                  }}
+                />
               ))}
             </div>
           </section>

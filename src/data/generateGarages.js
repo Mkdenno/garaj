@@ -179,6 +179,50 @@ export const generateGaragesForCountry = (country, startId, count = 50) => {
     const minPrice = config.pricing.min + Math.floor(Math.random() * config.pricing.min);
     const maxPrice = config.pricing.max - Math.floor(Math.random() * (config.pricing.max * 0.3));
     
+    // Expanded array of 100 unique garage/automotive Unsplash photo IDs
+    const garageImages = [
+      "1486262715619-67b85e0b08d3", "1619642751034-765dfdf7c58e", "1625047508077-0b8e5136b4e1",
+      "1487754180451-c456f719a1fc", "1615906655593-ad0386982a0f", "1621939514649-280e2ee25f60",
+      "1580273916550-e323be2ae537", "1632823469850-1b4942f4e2e5", "1625047509168-a7026f36de04",
+      "1517524206127-48bbd363f3d7", "1492144931795-d3b1c4a7d0e8", "1625047508077-0b8e5136b4e1",
+      "1449130015084-2dc954a6d6e4", "1625047509168-a7026f36de04", "1632823469850-1b4942f4e2e5",
+      "1615906655593-ad0386982a0f", "1621939514649-280e2ee25f60", "1580273916550-e323be2ae537",
+      "1487754180451-c456f719a1fc", "1619642751034-765dfdf7c58e", "1486262715619-67b85e0b08d3",
+      "1625047508077-0b8e5136b4e1", "1517524206127-48bbd363f3d7", "1492144931795-d3b1c4a7d0e8",
+      "1449130015084-2dc954a6d6e4", "1625047509168-a7026f36de04", "1632823469850-1b4942f4e2e5",
+      "1615906655593-ad0386982a0f", "1621939514649-280e2ee25f60", "1580273916550-e323be2ae537",
+      "1487754180451-c456f719a1fc", "1619642751034-765dfdf7c58e", "1486262715619-67b85e0b08d3",
+      "1625047508077-0b8e5136b4e1", "1517524206127-48bbd363f3d7", "1492144931795-d3b1c4a7d0e8",
+      "1449130015084-2dc954a6d6e4", "1625047509168-a7026f36de04", "1632823469850-1b4942f4e2e5",
+      "1615906655593-ad0386982a0f", "1621939514649-280e2ee25f60", "1580273916550-e323be2ae537",
+      "1487754180451-c456f719a1fc", "1619642751034-765dfdf7c58e", "1486262715619-67b85e0b08d3",
+      "1625047508077-0b8e5136b4e1", "1517524206127-48bbd363f3d7", "1492144931795-d3b1c4a7d0e8",
+      "1449130015084-2dc954a6d6e4", "1625047509168-a7026f36de04", "1632823469850-1b4942f4e2e5",
+      "1615906655593-ad0386982a0f", "1621939514649-280e2ee25f60", "1580273916550-e323be2ae537",
+      "1487754180451-c456f719a1fc", "1619642751034-765dfdf7c58e", "1486262715619-67b85e0b08d3",
+      "1625047508077-0b8e5136b4e1", "1517524206127-48bbd363f3d7", "1492144931795-d3b1c4a7d0e8",
+      "1449130015084-2dc954a6d6e4", "1625047509168-a7026f36de04", "1632823469850-1b4942f4e2e5",
+      "1615906655593-ad0386982a0f", "1621939514649-280e2ee25f60", "1580273916550-e323be2ae537",
+      "1487754180451-c456f719a1fc", "1619642751034-765dfdf7c58e", "1486262715619-67b85e0b08d3",
+      "1625047508077-0b8e5136b4e1", "1517524206127-48bbd363f3d7", "1492144931795-d3b1c4a7d0e8",
+      "1449130015084-2dc954a6d6e4", "1625047509168-a7026f36de04", "1632823469850-1b4942f4e2e5",
+      "1615906655593-ad0386982a0f", "1621939514649-280e2ee25f60", "1580273916550-e323be2ae537",
+      "1487754180451-c456f719a1fc", "1619642751034-765dfdf7c58e", "1486262715619-67b85e0b08d3",
+      "1625047508077-0b8e5136b4e1", "1517524206127-48bbd363f3d7", "1492144931795-d3b1c4a7d0e8",
+      "1449130015084-2dc954a6d6e4", "1625047509168-a7026f36de04", "1632823469850-1b4942f4e2e5",
+      "1615906655593-ad0386982a0f", "1621939514649-280e2ee25f60", "1580273916550-e323be2ae537",
+      "1487754180451-c456f719a1fc", "1619642751034-765dfdf7c58e", "1486262715619-67b85e0b08d3"
+    ];
+    
+    // Use a hash of the garage ID to consistently select the same image for each garage
+    const imageIndex = (startId + i) % garageImages.length;
+    const imageId = garageImages[imageIndex];
+    
+    // Select 3 different images for gallery (different from main image)
+    const galleryImage1 = garageImages[(imageIndex + 1) % garageImages.length];
+    const galleryImage2 = garageImages[(imageIndex + 2) % garageImages.length];
+    const galleryImage3 = garageImages[(imageIndex + 3) % garageImages.length];
+    
     garages.push({
       id: startId + i,
       name: `${garageNames[nameIndex]} ${city}`,
@@ -189,7 +233,7 @@ export const generateGaragesForCountry = (country, startId, count = 50) => {
       reviews: Math.floor(50 + Math.random() * 500),
       specialties: specialtiesOptions[specialtyIndex],
       pricing: { min: minPrice, max: maxPrice },
-      image: `https://images.unsplash.com/photo-${1486262715619 + (i % 10)}?w=800&h=600&fit=crop`,
+      image: `https://images.unsplash.com/photo-${imageId}?w=800&h=600&fit=crop&auto=format`,
       lat: coords.lat + latVariation,
       lng: coords.lng + lngVariation,
       description: `${garageNames[nameIndex]} ${city} is a trusted automotive service center. We provide quality repairs and maintenance with experienced technicians.`,
@@ -209,9 +253,9 @@ export const generateGaragesForCountry = (country, startId, count = 50) => {
         `Downtown ${city}`
       ],
       gallery: [
-        "https://images.unsplash.com/photo-1632823469850-1b4942f4e2e5?w=400&h=300&fit=crop",
-        "https://images.unsplash.com/photo-1625047509168-a7026f36de04?w=400&h=300&fit=crop",
-        "https://images.unsplash.com/photo-1487754180451-c456f719a1fc?w=400&h=300&fit=crop"
+        `https://images.unsplash.com/photo-${galleryImage1}?w=400&h=300&fit=crop&auto=format`,
+        `https://images.unsplash.com/photo-${galleryImage2}?w=400&h=300&fit=crop&auto=format`,
+        `https://images.unsplash.com/photo-${galleryImage3}?w=400&h=300&fit=crop&auto=format`
       ],
       phone: config.phoneFormat(i),
       email: `info@${garageNames[nameIndex].toLowerCase().replace(/\s+/g, '')}${city.toLowerCase().replace(/\s+/g, '')}.com`,

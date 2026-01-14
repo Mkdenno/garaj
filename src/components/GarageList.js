@@ -368,7 +368,26 @@ function GarageList({ onSelectGarage }) {
             onClick={() => onSelectGarage(garage)}
           >
             <div className="garage-image">
-              <img src={garage.image} alt={garage.name} />
+              <img 
+                src={garage.image} 
+                alt={garage.name}
+                onError={(e) => {
+                  // Fallback to gallery images if main image fails
+                  if (garage.gallery && garage.gallery.length > 0) {
+                    e.target.src = garage.gallery[0];
+                    e.target.onerror = () => {
+                      if (garage.gallery[1]) {
+                        e.target.src = garage.gallery[1];
+                        e.target.onerror = () => {
+                          if (garage.gallery[2]) {
+                            e.target.src = garage.gallery[2];
+                          }
+                        };
+                      }
+                    };
+                  }
+                }}
+              />
               <div className="distance-badge">{garage.distance} km</div>
             </div>
             <div className="garage-info">

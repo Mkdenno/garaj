@@ -56,7 +56,7 @@ export const mockGarages = [
     specialties: ["Oil Change", "Brake Service", "Diagnostics"],
     pricing: { min: 2000, max: 5000 },
     image:
-      "https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?w=800&h=600&fit=crop&auto=format",
     lat: -1.2864,
     lng: 36.8172,
     description:
@@ -77,9 +77,9 @@ export const mockGarages = [
       "Next to Westlands Police Station",
     ],
     gallery: [
-      "https://images.unsplash.com/photo-1632823469850-1b4942f4e2e5?w=400&h=300&fit=crop",
-      "https://images.unsplash.com/photo-1625047509168-a7026f36de04?w=400&h=300&fit=crop",
-      "https://images.unsplash.com/photo-1487754180451-c456f719a1fc?w=400&h=300&fit=crop",
+      "https://images.unsplash.com/photo-1632823469850-1b4942f4e2e5?w=400&h=300&fit=crop&auto=format",
+      "https://images.unsplash.com/photo-1625047509168-a7026f36de04?w=400&h=300&fit=crop&auto=format",
+      "https://images.unsplash.com/photo-1487754180451-c456f719a1fc?w=400&h=300&fit=crop&auto=format",
     ],
     phone: "+254 712 345 678",
     email: "info@autocarepro.co.ke",
@@ -97,7 +97,7 @@ export const mockGarages = [
     specialties: ["Quick Service", "Tire Change", "Battery"],
     pricing: { min: 1500, max: 4000 },
     image:
-      "https://images.unsplash.com/photo-1619642751034-765dfdf7c58e?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1619642751034-765dfdf7c58e?w=800&h=600&fit=crop&auto=format",
     lat: -1.2921,
     lng: 36.7856,
     description:
@@ -117,9 +117,9 @@ export const mockGarages = [
       "Adjacent to Shell Petrol Station",
     ],
     gallery: [
-      "https://images.unsplash.com/photo-1615906655593-ad0386982a0f?w=400&h=300&fit=crop",
-      "https://images.unsplash.com/photo-1621939514649-280e2ee25f60?w=400&h=300&fit=crop",
-      "https://images.unsplash.com/photo-1580273916550-e323be2ae537?w=400&h=300&fit=crop",
+      "https://images.unsplash.com/photo-1615906655593-ad0386982a0f?w=400&h=300&fit=crop&auto=format",
+      "https://images.unsplash.com/photo-1621939514649-280e2ee25f60?w=400&h=300&fit=crop&auto=format",
+      "https://images.unsplash.com/photo-1580273916550-e323be2ae537?w=400&h=300&fit=crop&auto=format",
     ],
     phone: "+254 720 456 789",
     email: "service@quickfixmotors.co.ke",
@@ -137,7 +137,7 @@ export const mockGarages = [
     specialties: ["Full Service", "Diagnostics", "NYC Inspection"],
     pricing: { min: 80, max: 200 },
     image:
-      "https://images.unsplash.com/photo-1487754180451-c456f719a1fc?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1487754180451-c456f719a1fc?w=800&h=600&fit=crop&auto=format",
     lat: 40.7580,
     lng: -73.9855,
     description:
@@ -158,9 +158,9 @@ export const mockGarages = [
       "Lincoln Center nearby",
     ],
     gallery: [
-      "https://images.unsplash.com/photo-1632823469850-1b4942f4e2e5?w=400&h=300&fit=crop",
-      "https://images.unsplash.com/photo-1625047509168-a7026f36de04?w=400&h=300&fit=crop",
-      "https://images.unsplash.com/photo-1487754180451-c456f719a1fc?w=400&h=300&fit=crop",
+      "https://images.unsplash.com/photo-1632823469850-1b4942f4e2e5?w=400&h=300&fit=crop&auto=format",
+      "https://images.unsplash.com/photo-1625047509168-a7026f36de04?w=400&h=300&fit=crop&auto=format",
+      "https://images.unsplash.com/photo-1487754180451-c456f719a1fc?w=400&h=300&fit=crop&auto=format",
     ],
     phone: "+1 (212) 555-0123",
     email: "info@manhattanauto.com",
@@ -177,7 +177,7 @@ export const mockGarages = [
     specialties: ["Quick Service", "Brakes", "Tires"],
     pricing: { min: 60, max: 150 },
     image:
-      "https://images.unsplash.com/photo-1625047508077-0b8e5136b4e1?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1625047508077-0b8e5136b4e1?w=800&h=600&fit=crop&auto=format",
     lat: 40.6782,
     lng: -73.9442,
     description:
@@ -197,9 +197,9 @@ export const mockGarages = [
       "Brooklyn Museum - 1 mile",
     ],
     gallery: [
-      "https://images.unsplash.com/photo-1615906655593-ad0386982a0f?w=400&h=300&fit=crop",
-      "https://images.unsplash.com/photo-1621939514649-280e2ee25f60?w=400&h=300&fit=crop",
-      "https://images.unsplash.com/photo-1580273916550-e323be2ae537?w=400&h=300&fit=crop",
+      "https://images.unsplash.com/photo-1615906655593-ad0386982a0f?w=400&h=300&fit=crop&auto=format",
+      "https://images.unsplash.com/photo-1621939514649-280e2ee25f60?w=400&h=300&fit=crop&auto=format",
+      "https://images.unsplash.com/photo-1580273916550-e323be2ae537?w=400&h=300&fit=crop&auto=format",
     ],
     phone: "+1 (718) 555-0456",
     email: "service@brooklynauto.com",
@@ -217,7 +217,7 @@ export const mockGarages = [
     specialties: ["MOT Testing", "Servicing", "Repairs"],
     pricing: { min: 50, max: 180 },
     image:
-      "https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?w=800&h=600&fit=crop&auto=format",
     lat: 51.5074,
     lng: -0.1278,
     description:
@@ -238,9 +238,9 @@ export const mockGarages = [
       "Buckingham Palace area",
     ],
     gallery: [
-      "https://images.unsplash.com/photo-1632823469850-1b4942f4e2e5?w=400&h=300&fit=crop",
-      "https://images.unsplash.com/photo-1625047509168-a7026f36de04?w=400&h=300&fit=crop",
-      "https://images.unsplash.com/photo-1487754180451-c456f719a1fc?w=400&h=300&fit=crop",
+      "https://images.unsplash.com/photo-1632823469850-1b4942f4e2e5?w=400&h=300&fit=crop&auto=format",
+      "https://images.unsplash.com/photo-1625047509168-a7026f36de04?w=400&h=300&fit=crop&auto=format",
+      "https://images.unsplash.com/photo-1487754180451-c456f719a1fc?w=400&h=300&fit=crop&auto=format",
     ],
     phone: "+44 20 7123 4567",
     email: "info@londonmotors.co.uk",
@@ -258,7 +258,7 @@ export const mockGarages = [
     specialties: ["All Brands", "Quick Service", "Affordable"],
     pricing: { min: 1500, max: 8000 },
     image:
-      "https://images.unsplash.com/photo-1619642751034-765dfdf7c58e?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1619642751034-765dfdf7c58e?w=800&h=600&fit=crop&auto=format",
     lat: 19.0760,
     lng: 72.8777,
     description:
@@ -279,9 +279,9 @@ export const mockGarages = [
       "Opposite Bandra Court",
     ],
     gallery: [
-      "https://images.unsplash.com/photo-1615906655593-ad0386982a0f?w=400&h=300&fit=crop",
-      "https://images.unsplash.com/photo-1621939514649-280e2ee25f60?w=400&h=300&fit=crop",
-      "https://images.unsplash.com/photo-1580273916550-e323be2ae537?w=400&h=300&fit=crop",
+      "https://images.unsplash.com/photo-1615906655593-ad0386982a0f?w=400&h=300&fit=crop&auto=format",
+      "https://images.unsplash.com/photo-1621939514649-280e2ee25f60?w=400&h=300&fit=crop&auto=format",
+      "https://images.unsplash.com/photo-1580273916550-e323be2ae537?w=400&h=300&fit=crop&auto=format",
     ],
     phone: "+91 22 2345 6789",
     email: "service@mumbaiautocare.in",
@@ -299,7 +299,7 @@ export const mockGarages = [
     specialties: ["European Cars", "Diagnostics", "Performance"],
     pricing: { min: 100, max: 300 },
     image:
-      "https://images.unsplash.com/photo-1625047508077-0b8e5136b4e1?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1625047508077-0b8e5136b4e1?w=800&h=600&fit=crop&auto=format",
     lat: -33.8688,
     lng: 151.2093,
     description:
@@ -320,9 +320,9 @@ export const mockGarages = [
       "Opera House - 2km",
     ],
     gallery: [
-      "https://images.unsplash.com/photo-1632823469850-1b4942f4e2e5?w=400&h=300&fit=crop",
-      "https://images.unsplash.com/photo-1625047509168-a7026f36de04?w=400&h=300&fit=crop",
-      "https://images.unsplash.com/photo-1487754180451-c456f719a1fc?w=400&h=300&fit=crop",
+      "https://images.unsplash.com/photo-1632823469850-1b4942f4e2e5?w=400&h=300&fit=crop&auto=format",
+      "https://images.unsplash.com/photo-1625047509168-a7026f36de04?w=400&h=300&fit=crop&auto=format",
+      "https://images.unsplash.com/photo-1487754180451-c456f719a1fc?w=400&h=300&fit=crop&auto=format",
     ],
     phone: "+61 2 9123 4567",
     email: "info@sydneyauto.com.au",
@@ -340,7 +340,7 @@ export const mockGarages = [
     specialties: ["All Makes", "Service", "Repairs"],
     pricing: { min: 500, max: 3000 },
     image:
-      "https://images.unsplash.com/photo-1487754180451-c456f719a1fc?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1487754180451-c456f719a1fc?w=800&h=600&fit=crop&auto=format",
     lat: -26.2041,
     lng: 28.0473,
     description:
@@ -361,9 +361,9 @@ export const mockGarages = [
       "M1 Highway access",
     ],
     gallery: [
-      "https://images.unsplash.com/photo-1615906655593-ad0386982a0f?w=400&h=300&fit=crop",
-      "https://images.unsplash.com/photo-1621939514649-280e2ee25f60?w=400&h=300&fit=crop",
-      "https://images.unsplash.com/photo-1580273916550-e323be2ae537?w=400&h=300&fit=crop",
+      "https://images.unsplash.com/photo-1615906655593-ad0386982a0f?w=400&h=300&fit=crop&auto=format",
+      "https://images.unsplash.com/photo-1621939514649-280e2ee25f60?w=400&h=300&fit=crop&auto=format",
+      "https://images.unsplash.com/photo-1580273916550-e323be2ae537?w=400&h=300&fit=crop&auto=format",
     ],
     phone: "+27 11 123 4567",
     email: "info@joburgauto.co.za",
@@ -380,7 +380,7 @@ export const mockGarages = [
     specialties: ["Luxury Cars", "Performance", "Detailing"],
     pricing: { min: 5000, max: 15000 },
     image:
-      "https://images.unsplash.com/photo-1625047508077-0b8e5136b4e1?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1625047508077-0b8e5136b4e1?w=800&h=600&fit=crop&auto=format",
     lat: -1.3197,
     lng: 36.7078,
     description:
@@ -401,9 +401,9 @@ export const mockGarages = [
       "Opposite Nairobi National Park Gate",
     ],
     gallery: [
-      "https://images.unsplash.com/photo-1619642751034-765dfdf7c58e?w=400&h=300&fit=crop",
-      "https://images.unsplash.com/photo-1632823469850-1b4942f4e2e5?w=400&h=300&fit=crop",
-      "https://images.unsplash.com/photo-1625047509168-a7026f36de04?w=400&h=300&fit=crop",
+      "https://images.unsplash.com/photo-1619642751034-765dfdf7c58e?w=400&h=300&fit=crop&auto=format",
+      "https://images.unsplash.com/photo-1632823469850-1b4942f4e2e5?w=400&h=300&fit=crop&auto=format",
+      "https://images.unsplash.com/photo-1625047509168-a7026f36de04?w=400&h=300&fit=crop&auto=format",
     ],
     phone: "+254 733 567 890",
     email: "concierge@eliteauto.co.ke",
@@ -420,7 +420,7 @@ export const mockGarages = [
     specialties: ["Eco-Friendly", "Hybrid", "Electric"],
     pricing: { min: 3000, max: 8000 },
     image:
-      "https://images.unsplash.com/photo-1487754180451-c456f719a1fc?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1487754180451-c456f719a1fc?w=800&h=600&fit=crop&auto=format",
     lat: -1.2333,
     lng: 36.8,
     description:
@@ -440,9 +440,9 @@ export const mockGarages = [
       "Next to Two Rivers Mall",
     ],
     gallery: [
-      "https://images.unsplash.com/photo-1615906655593-ad0386982a0f?w=400&h=300&fit=crop",
-      "https://images.unsplash.com/photo-1580273916550-e323be2ae537?w=400&h=300&fit=crop",
-      "https://images.unsplash.com/photo-1621939514649-280e2ee25f60?w=400&h=300&fit=crop",
+      "https://images.unsplash.com/photo-1615906655593-ad0386982a0f?w=400&h=300&fit=crop&auto=format",
+      "https://images.unsplash.com/photo-1580273916550-e323be2ae537?w=400&h=300&fit=crop&auto=format",
+      "https://images.unsplash.com/photo-1621939514649-280e2ee25f60?w=400&h=300&fit=crop&auto=format",
     ],
     phone: "+254 745 678 901",
     email: "hello@greengarage.co.ke",
@@ -459,7 +459,7 @@ export const mockGarages = [
     specialties: ["Emergency", "Towing", "24/7 Service"],
     pricing: { min: 2500, max: 6000 },
     image:
-      "https://images.unsplash.com/photo-1625047508077-0b8e5136b4e1?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1625047508077-0b8e5136b4e1?w=800&h=600&fit=crop&auto=format",
     lat: -1.2864,
     lng: 36.8172,
     description:
@@ -480,9 +480,9 @@ export const mockGarages = [
       "CBD - Uhuru Highway",
     ],
     gallery: [
-      "https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?w=400&h=300&fit=crop",
-      "https://images.unsplash.com/photo-1632823469850-1b4942f4e2e5?w=400&h=300&fit=crop",
-      "https://images.unsplash.com/photo-1487754180451-c456f719a1fc?w=400&h=300&fit=crop",
+      "https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?w=400&h=300&fit=crop&auto=format",
+      "https://images.unsplash.com/photo-1632823469850-1b4942f4e2e5?w=400&h=300&fit=crop&auto=format",
+      "https://images.unsplash.com/photo-1487754180451-c456f719a1fc?w=400&h=300&fit=crop&auto=format",
     ],
     phone: "+254 700 123 456",
     email: "emergency@247autorescue.co.ke",
@@ -499,7 +499,7 @@ export const mockGarages = [
     specialties: ["Classic Cars", "Restoration", "Custom Work"],
     pricing: { min: 10000, max: 50000 },
     image:
-      "https://images.unsplash.com/photo-1619642751034-765dfdf7c58e?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1619642751034-765dfdf7c58e?w=800&h=600&fit=crop&auto=format",
     lat: -1.3167,
     lng: 36.85,
     description:
@@ -520,9 +520,9 @@ export const mockGarages = [
       "Opposite Baba Dogo",
     ],
     gallery: [
-      "https://images.unsplash.com/photo-1625047509168-a7026f36de04?w=400&h=300&fit=crop",
-      "https://images.unsplash.com/photo-1580273916550-e323be2ae537?w=400&h=300&fit=crop",
-      "https://images.unsplash.com/photo-1615906655593-ad0386982a0f?w=400&h=300&fit=crop",
+      "https://images.unsplash.com/photo-1625047509168-a7026f36de04?w=400&h=300&fit=crop&auto=format",
+      "https://images.unsplash.com/photo-1580273916550-e323be2ae537?w=400&h=300&fit=crop&auto=format",
+      "https://images.unsplash.com/photo-1615906655593-ad0386982a0f?w=400&h=300&fit=crop&auto=format",
     ],
     phone: "+254 722 890 123",
     email: "info@classiccarworkshop.co.ke",
